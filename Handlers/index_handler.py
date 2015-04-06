@@ -1,11 +1,25 @@
 import tornado
+from models import NewsAkhbar,Author
 
-__author__ = 'mojtaba.banaie'
+__author__ = 'HASHEM'
 
 
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
-            self.render('index.html',UN= "Hello!")
-        # else :
-        #     session.set('LoggedIn', {"_id":"12222222","name":"ali"})
-        #     self.render('index.html',UN="U Are Not Logged In..")
+        CatInfo = NewsAkhbar.select().order_by(NewsAkhbar.id.desc())
+
+        self.render('index.html', CatInfo=CatInfo)
+
+
+class FivePostHandler(tornado.web.RequestHandler):
+    def get(self):
+        CatInfo = NewsAkhbar.select().order_by(NewsAkhbar.id.desc()).limit(5)
+
+        self.render('index.html', CatInfo=CatInfo)
+
+
+class AdminHandler(tornado.web.RequestHandler):
+    def get(self):
+        CatInfo = NewsAkhbar.select().order_by(NewsAkhbar.id.desc())
+
+        self.render('admin.html', CatInfo=CatInfo)

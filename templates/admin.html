@@ -36,7 +36,22 @@
             <section class="col-md-12 col-sm-12">
             	
                 <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                	
+                	<section class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="direction: rtl">
+                        <table dir="rtl">
+                            <tr>
+                                <td> عملیات اخبار سایت </td>
+                                <td> <a href="#" class="btn btn-success"> افزودن خبر </a> </td>
+                                <td> <a href="#" class="btn btn-default"> نمایش اخبار </a> </td>
+                            </tr>
+                            <tr>
+                                <td> عملیات دسته های سایت </td>
+                                <td> <a href="/category/new" class="btn btn-success"> افزودن دسته </a> </td>
+                                <td> <a href="/category" class="btn btn-default"> نمایش دسته ها </a> </td>
+                                <td> <a href="/category" class="btn btn-danger"> حذف دسته </a> </td>
+                                <td> <a href="/category" class="btn btn-default"> ویرایش دسته </a> </td>
+                            </tr>
+                        </table>
+                    </section>
                     <section class="col-md-12 text-right tab">
                     	<ul>
                             <li>
@@ -72,6 +87,8 @@
                                     	<span> . </span>
                                         بدون نظر
                                     </a>
+                                    <td> <a href="{{post.id}}" class="btn btn-danger"> حذف خبر </a> </td>
+                                    <td> <a href="{{post.id}}" class="btn btn-default"> ویرایش خبر </a> </td>
                                     <p></p>
                                     <div class="body">
                                     	<p>
