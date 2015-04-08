@@ -1,5 +1,5 @@
 import tornado
-from  models import *
+from models import *
 import peewee
 
 __author__ = 'mojtaba.banaie'

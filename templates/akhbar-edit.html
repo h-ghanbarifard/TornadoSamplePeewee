@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head><title>Poem Maker Pro</title>
+<link href='{{ static_url("css/bootstrap.css") }}' rel="stylesheet">
+<link href='{{ static_url("css/bootstrap-theme.css") }}' rel="stylesheet">
+    <link href='{{ static_url("css/basic.css") }}' rel="stylesheet">
+
+</head>
+<body style="direction:rtl">
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 ">
+          <form method="post" action="/New/Edit/{{post.id}}">
+
+              <div class="form-group">
+            <label for="title" class="control-label Mitra" > عنوان : </label>
+            <input type="text" name="title" value="{{post.title}}" id="title" class="form-control"/>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="text" class="control-label Mitra" > متن اصلی خبر : </label>
+            <input type="text" name="text" id="text" value="{{post.text}}" class="form-control" />
+
+          </div>
+
+           <div class="form-group">
+            <label for="date" class="control-label Mitra" > تاریخ روز : </label>
+            <input type="text" name="date" id="date" value="{{post.date}}" class="form-control" />
+
+          </div>
+
+
+           <div class="form-group">
+            <label for="image" class="control-label Mitra" > نام و پسوند تصویر مورد نظر : </label>
+            <input type="text" name="image" id="image" value="{{post.image}}" class="form-control" />
+
+          </div>
+
+
+            <div class="form-group">
+              <label for="category" class="control-label Mitra" > دسته مورد نظر :  </label>
+              <select id="category" name="category">
+                  {% for category in cat %}
+                  <option> {{category.name}} </option>
+                  {% end %}
+              </select>
+          </div>
+
+
+
+            <div>
+              <label for="author" class="control-label Mitra" > نویسنده پست:  </label>
+              <select id="author" name="author">
+                  {% for author in au %}
+                  <option> {{author.ln}} </option>
+                  {% end %}
+              </select>
+          </div>
+
+        <input type="submit" class="btn btn-primary Yekan" value="ذخیره تغییرات" >
+
+
+              </form>
+    </div>
+</div>
+<script src="{{static_url('js/jquery.js')}}"></script>
+<script src="{{static_url('js/bootstrap.js')}}"></script>
+
+</body>
+</html>
